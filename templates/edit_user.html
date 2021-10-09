@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block titulo %}
+Agregar Usuarios
+{% endblock %}
+{% block contenido %}
+<div class="container">
+    <section class="section">
+        <div class="columns">
+            <div class="column is-one-third">
+                <h3 class="is-size-3">Actualizar Usuario</h3>
+                <form action="{{url_for('update_user')}}" method="post">
+                    <label for="name">Nombre: </label>
+                    <input required type="text" class="form-control" placeholder="Nombre" name="name" id="name" value="{{user[1]}}">
+                    <label for="email">Correo: </label>
+                    <input required type="text" class="form-control" placeholder="Correo Electronico" name="email" id="email" value="{{cliente[2]}}">
+                    <label for="telefono">Telefono: </label>
+                    <input required type="text" class="form-control" placeholder="Teléfono" name="telefono" id="telefono" value="{{cliente[3]}}">
+                    <label for="passwd">Constraseña:</label>
+                    <input required type="text" class="form-control" placeholder="Contraseña" name="passwd" id="passwd">
+                    <br>
+                    <button type="submit" class="btn btn-success">Actualizar</button>
+                    <a href="{{url_for('/')}}" class="btn btn-primary">Volver</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
